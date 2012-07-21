@@ -1,8 +1,5 @@
 # **revision.coffee**
-# This module generates a past revision of a data file and caches it in 'data/rev'.
-#
-# The saved file has the name of the id of the point in the journal's history
-# that the revision represents.
+# This module generates a past revision of a page
 
 create = (revIndex, data) ->
   journal = data.journal
@@ -39,3 +36,4 @@ create = (revIndex, data) ->
   return {story: revStory, journal: revJournal, title: revTitle}
 
 exports.create = create
+

@@ -11,7 +11,8 @@ pageHandler.get = (pageElement, callback, localContext) ->
     return callback null
   if wiki.useLocalStorage() and json = localStorage[slug]
     pageElement.addClass("local")
-    return callback JSON.parse(json)
+    page = JSON.parse(json)
+    return callback revision.create rev, page if rev
   pageHandler.context = ['origin'] unless pageHandler.context.length > 0
   if site
     localContext = []
