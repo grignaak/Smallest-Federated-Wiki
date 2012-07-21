@@ -176,11 +176,11 @@ p.readout
     background-color: $color
 
 .page
+  @include page-base(white)
   float: left
   margin: 8px
   padding: 0 31px
   width: 430px
-  background-color: white
   height: 100%
   overflow: auto
   box-shadow: 2px 1px 4px rgba(0,0,0,0.2)
@@ -190,7 +190,7 @@ p.readout
     z-index: 10
 
 .page.local
-  background-color: #FBFBEF
+  @include page-base(#fbfbef)
   
 .factory,
 textarea
@@ -273,3 +273,20 @@ textarea
 .ghost
   opacity: 0.6
   border-color: #eef2fe
+
+
+.pagefold > div
+  // http://stackoverflow.com/questions/5214127/css-technique-for-a-horizontal-line-with-words-in-the-middle
+  height: 10px
+  border-top: 2px solid lightgray
+  margin-top: 24px
+  text-align: center
+  position: relative
+  clear: both
+
+  span
+    position: relative
+    top: -.8em
+    display: inline-block
+    color: gray
+    padding: 0 1em
